@@ -1,0 +1,135 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container .sub-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+.sub-con h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.sub-con .pick{
+    position: relative;
+    left: 0;
+    width: 100%;
+}
+.pick p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+.sub-con ul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.sub-con ul li{
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin: 5px;
+}
+ul li button  {
+    font-size: 1.5rem;
+    border: 2px solid #050A30;
+    background: #00ffff;
+    color: #050A30;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px #000;
+}
+.sub-con ul li button:hover{
+    border-color: #000C66;
+    background: #7EC8E3;
+}
+.pickContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.pickContainer .computerPick, .pickContainer .playerPick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.computerPick img, .playerPick img {
+    width: 100px;
+    height: 100px;
+    animation-duration: 0.3s;
+    animation-name: Popup;
+}
+.popup{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    animation-duration: 0.2s;
+    animation-name: Popup;
+}
+@keyframes Popup {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.popup #message{
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 0px 0px 20px  #000fff;
+    text-align: center;
+}
+.popup button{
+    font-size: 3rem;
+    padding: 15px;
+    border: 2px solid #050A30;
+    background: #00ffff;
+    font-weight: 700;
+    border-radius: 25px;
+}
+.popup button:hover{
+    border-color: #000C66;
+    background: #7EC8E3;
+    color: #050A30;
+}
+@media screen and (max-width: 767px) {
+    .sub-con h2{
+        font-size: 2rem;
+    }
+    .pick p{
+        font-size: 1rem;
+    }
+    .popup #message{
+        font-size: 3.5rem;
+    }
+    .popup button{
+        font-size: 2rem;
+        padding: 10px;
+    }
+}
