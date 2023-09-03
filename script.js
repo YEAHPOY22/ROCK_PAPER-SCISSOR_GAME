@@ -12,6 +12,8 @@ var player;
 var computer;
 var playerScore = 0;
 var computerScore = 0;
+
+
 userPick.forEach(button => button.addEventListener('click', () =>{
 
     player = button.innerHTML;
@@ -90,16 +92,21 @@ function checkWinner(){
                 computerWin.textContent = `Computer Win: ${computerScore}`;
             }
         }
+        
 }
 
 function scoreChecker(){
     if (playerScore == 5) {
+        playerScore = 0;
+        computerScore = 0;
         playerWin.textContent =  `Player Win: ${playerScore}`;
         computerWin.textContent = `Computer Win: ${computerScore}`;
         popup.style.display = "flex";
         message.textContent = "You Win!!!";
         
     }else if(computerScore == 5) {
+        playerScore = 0;
+        computerScore = 0;
         playerWin.textContent =  `Player Win: ${playerScore}`
         computerWin.textContent = `Computer Win: ${computerScore}`;
         popup.style.display = "flex";
