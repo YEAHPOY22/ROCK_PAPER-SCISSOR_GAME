@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .container .sub-con{
     display: flex;
@@ -75,10 +75,9 @@ ul li button  {
 .computerPick img, .playerPick img {
     width: 100px;
     height: 100px;
-    animation-duration: 0.3s;
+    transition: 0.2s ease-in-out;
     opacity: 1;
-    animation-name: Popup;
-    animation-timing-function: ease-in-out;
+    
     
 
 }

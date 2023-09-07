@@ -13,8 +13,8 @@ var computer;
 var playerScore = 0;
 var computerScore = 0;
 
-
 userPick.forEach(button => button.addEventListener('click', () =>{
+    document.querySelector('#playerImgPick').style.transform = 'scale(0)';
 
     player = button.innerHTML;
     if (player == "ROCK") {
@@ -23,11 +23,17 @@ userPick.forEach(button => button.addEventListener('click', () =>{
         document.querySelector('#playerImgPick').src = ('img/scissor.png');
     }else{
         document.querySelector('#playerImgPick').src = ('img/paper.png');
+        
     }
+
+
     computerTurn();
     checkWinner();
     scoreChecker();
-
+    setTimeout(() => {
+            document.querySelector('#playerImgPick').style.transform = 'scale(1)';
+            imgPick.style.transform = 'scale(1)';
+        }, 300);
 }));
 
 popupMessage.addEventListener("click", function(e){
@@ -41,14 +47,17 @@ function computerTurn(){
     switch(randomNumber){
         case 1:
             computer = "ROCK";
+            imgPick.style.transform = 'scale(0)';
             imgPick.src = ('img/computer_rock.png');
             break;
         case 2:
             computer = "PAPER";
+            imgPick.style.transform = 'scale(0)';
             imgPick.src = ('img/computer_paper.png');
             break;
         case 3:
             computer = "SCISSOR";
+            imgPick.style.transform = 'scale(0)';
             imgPick.src = ('img/computer_scissor.png');
             break;
      }
@@ -92,7 +101,6 @@ function checkWinner(){
                 computerWin.textContent = `Computer Win: ${computerScore}`;
             }
         }
-        
 }
 
 function scoreChecker(){
